@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<title>Scan&Solve Documentation</title> 
+	<meta name="description" content="Scan&Solve(tm) for Rhino Help"> 
+	<meta name="copyright" content="Copyright (c) 2011 Intact Solutions LLC"> 
+	<meta name="author" content="Intact Solutions"> 
+    <link href="sns_docs.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<div id="wrap">
+<div id="header"><a href="index.htm"><h1>Scan&amp;Solve&#8482; Documentation</h1></a></div><a href="linear.htm">
+<h1>Linear Static Analysis</h1></a>
+<h2>Scan&Solve Numerical Model</h2>
+<p>Scan&amp;Solve&#8482; is a generalized form of the classical Finite Element Analysis (FEA). 
+Classical FEA approximates an idealized theoretical model of physical behavior by breaking up the 
+model or space into small pieces called finite elements. But Scan&amp;Solve&#8482; was developed 
+specifically to liberate FEA from the tyranny of meshing, while preserving most of the advantages 
+of this classical and widely accepted method of engineering analysis. The basic idea is simple: 
+create separate geometric and physical representations of the model in question and combine them 
+only when necessary, without requiring expensive and error-prone data conversions and always using 
+the most authentic representation available. The concept is illustrated below.</p>
+<img src="images/sns_idea.jpg">
+<p>The analysis model is constructed on a (typically, but not necessarily) uniform orthogonal grid 
+of space that initially knows nothing about the model being analyzed. It can be thought of as a 3D 
+"graph paper". The usual variety of basis functions may be associated with the vertices of this 
+mesh. Currently, only linear B-spline functions are released. The geometric model exists in the 
+same space, in its native unaltered form, and is not aware of the mesh surrounding it. The usual 
+FEA procedure is then modified at run time to account for the existence of the geometric 
+boundaries, restraints, and loads via the Scan&amp;Solve&#8482; process that eliminates or modifies 
+the relevant finite elements. From the user perspective, the whole process is totally transparent 
+and mesh-free, or more accurately "meshing-free".</p>
+<p>Here is the <a href="http://www.scan-and-solve.com/page/compare-with-fea">comparison of the 
+classical mesh-based FEA and Scan&amp;Solve&#8482;</a> technology. If you want to know more 
+technical details about the Scan&amp;Solve&#8482; technology, you can find them in this 
+<a href="http://www.intact-solutions.com/Scan&amp;Solve.pdf">white paper</a>.</p>
+<div id="footer"> 
+<p>Copyright 2011, Intact Solutions, LLC.</p> 
+</div> 
+
+</div>
+</body> 
+</html> 

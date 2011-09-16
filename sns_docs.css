@@ -1,0 +1,209 @@
+﻿body {
+	margin:0;
+	padding:0;
+	color:#000;
+	background:#FFFFFF;
+	font-family:Calibri,Verdana,Ariel,sans-serif;
+}
+
+#wrap {
+	width:600px;
+	margin:0 auto;
+}
+
+#wrap a
+{
+	text-decoration:none;
+}
+
+#header 
+{
+	height:77px;
+	background-image:url('images/header_background.png');
+}
+
+#header h1 
+{
+	font-size:xx-large;
+	margin-left:60px;
+	border:none;
+}
+
+h1 
+{
+	font-size:larger;
+	text-align:left;
+	color:#1F497D;
+    margin:0;
+    border-top:thin solid #1F497D;
+}
+
+h2
+{
+	font-size:large;
+}
+
+h3
+{
+	font-size:medium;
+}
+
+h3.feature
+{
+	font-size:medium;
+	color:#1F497D;
+}
+
+p
+{
+	text-align:justify;
+}
+
+p.indent
+{
+	margin-left:1cm;
+	margin-right:1cm;
+	line-height:1em;
+}
+
+span.code
+{
+	font-family:Courier;
+	font-size:small;
+}
+
+table#technology
+{
+	background-color:White;
+	width: 100%;
+}
+
+table#technology td
+{
+	width: 50%;
+	padding: 1px 4px 1px 4px;
+}
+
+.head
+{
+	background-color:#D2DFEE;
+	font-weight:bold;
+	text-align:center;
+}
+
+.odd
+{
+	background-color:#D2DFEE;
+}
+
+.even
+{
+	background-color:#E3EBF5;
+}
+
+table#navigation
+{
+	background-color:White;
+	width: 100%;
+	border-color:White;
+	border-style:solid;
+	border-top-width:1px;
+	border-left-width:0px;
+	border-bottom-width:0px;
+	border-right-width:0px;
+	border-top-color:Red;
+	border-collapse:collapse;
+	text-align:center;
+}
+
+table#navigation a
+{
+	text-decoration:none;
+	color:White;
+}
+
+table#navigation td
+{
+	text-align:center;
+	width:25%;
+	border-color:White;
+	border-style:solid;
+	border-left-color:White;
+	border-left-width:1px;
+	border-right-width:1px;
+	border-top-width:1px;
+	border-top-color:Red;
+	border-collapse:collapse;
+	padding: 2px 0px 2px 0px;
+}
+
+.current
+{
+	background-color:#1F497D;
+}
+
+.normal
+{
+	background-color:#4F81BD;
+}
+
+table#plain
+{
+	border-collapse:collapse;
+}
+
+table#plain th,td
+{
+	border:solid 1px black;
+	border-collapse:collapse;
+}
+
+#leftcontent {
+	float:left;
+	width:430px;
+	padding:10px;
+}
+
+#rightcontent {
+	float:right;
+	width:430px;
+	padding:10px;
+}
+
+#rightcontent h3
+{
+	font-size:medium;
+}
+
+#centercontent 
+{
+	width:880px;
+	padding:10px;
+}
+
+#centercontent h3
+{
+	font-size:medium;
+}
+
+#footer 
+{
+	clear:both;
+	padding:5px 10px;
+}
+
+#footer p {
+	text-align:right;
+	font-size:small;
+	margin:5px;
+}
+
+img.floatLeft 
+{
+	float: left;
+	margin: 4px;
+}
+
+ol { list-style-type:decimal }
+
+ol ol { list-style-type:lower-alpha }

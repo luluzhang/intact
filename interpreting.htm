@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<title>Scan&Solve Documentation</title> 
+	<meta name="description" content="Scan&Solve(tm) for Rhino Help"> 
+	<meta name="copyright" content="Copyright (c) 2011 Intact Solutions LLC"> 
+	<meta name="author" content="Intact Solutions"> 
+    <link href="sns_docs.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<div id="wrap">
+<div id="header"><a href="index.htm"><h1>Scan&amp;Solve&#8482; Documentation</h1></a></div><a href="effective.htm"><h1>Effective Uses of Scan&Solve</h1></a>
+<h2>Interpreting Results</h2>
+<p>Given geometry, material, restraints, and loads, Scan&amp;Solve™ computes several types of 
+quantities that are useful in understanding predicted structural properties of the model:</p>
+<ul>
+  <li><strong>Displacements</strong>. The primary computed property is displacement  -- a vector 
+  (x-, y-, z-) quantity measuring where each point of the body moves after the loads are applied. 
+  The total displacement is a (scalar) magnitude of the displacement vector. Displacement is 
+  measured in units of length. Displacements are important for a number of reasons:
+    <ul>
+      <li>Recall that<a href="mathematical.htm"> linear static analysis </a> is really a "small 
+      displacement theory" that assumes that the solid shape does not change very much. Thus, the 
+      computed displacements can be interpreted as a first approximation of the actual deformation 
+      indicating tendency and magnitude of deformation.  They can be magnified and visualized in 
+      the deflected view. But if the computed displacements are large, the actual deformation may 
+      be very different.</li>
+      <li>Generally speaking, predicted values of displacement are always more accurate than 
+      predicted values of strains and stresses, because displacement is the primary quantity 
+      directly computed by solving a system of linear equations. In contrast to stresses, 
+      displacements have finite magnitude and do not have singularities at any points.</li>
+      <li>Large displacements are not necessarily bad; they simply indicate flexibility of the 
+      system to move or deform.</li>
+      <li>Because displacement is the primary computed quantity, it's accuracy is necessary for 
+      accurate prediction of all other properties. In particular, all computation of stresses, 
+      strains, and failure criteria require accurate displacements. </li>
+      <li>For the same reason, displacements provide the best measure for comparing consistency, 
+      accuracy, and convergence of computations -- in the same system or between different systems.</li>
+      </ul>
+  </li>
+</ul>
+<ul>
+  <li><strong>Strains</strong>. Informally, strains measure (directional) rate of deformation within 
+  the body. It is dimensionless because it measures change of length per unit length. Just like 
+  stress, one-dimesional strain can be measured in any direction, and there is one-to-one 
+  correspondence between components of stress and strain (normal, shear, principal, etc.).
+  </li>
+</ul>
+<ul>
+  <ul>
+    <li>At every point in the body, it is possible to orient the coordinate system in such a way 
+    that only normal strains acting in the three orthogonal coordinate axis directions remain. 
+    These three components of strain are called <em>principal</em> strains. The value and the 
+    direction of the principal strains changes at every point.</li>
+    <li>Generally, strains are proportional to stresses (i.e. large strains imply large stresses), 
+    and in linear elasticity stresses and strains are directly related by proportionality 
+    constants according to Hooke's law. Strains may be also used directly to predict material 
+    failures.</li>
+  </ul>
+</ul>
+<ul>
+  <li><strong>Stresses</strong>. Stress describes <em>all</em> forces acting at a point in a body. 
+  Different forces act in different directions. For any selected direction, stress in that direction 
+  is measured in units of Force/Area as a force acting across an imaginary plane perpendicular to 
+  the selected direction.  
+  </li>
+</ul>
+<ul>
+  <ul>
+    <li>At every point in the body, it is possible to orient the coordinate system in such a way 
+    that only normal stresses acting in the three orthogonal coordinate axis directions remain.  
+    These three components of stress are called <em>principal</em> stresses. The value and the 
+    direction of the principal stresses changes at every point.</li>
+    <li>Principal stresses are the main tools in predicting failure of materials based on properties 
+    of materials and postulated theory.  Von Mises criterion is popular for ductile materials, while 
+    Rankine and Mohr criteria are widely used for brittle materials. </li>
+    <li>Stresses tend to vary much faster than displacements and may even grow unbounded in the 
+    vicinty of stress concentrations -- in agreement with the theory of linear elasticity.</li>
+  </ul>
+</ul>
+<ul>
+  <li><strong>Danger Level.</strong> For a specific failure criterion, a danger level is a scalar 
+  value that ranges between 0 and 1. It is computed at every point as a ratio of the computed value 
+  of the selected failure criterion to the threshold value known to cause failure of this particular 
+  material. 
+  </li>
+</ul>
+<ul>
+  <ul>
+    <li>A value greater than 1, indicates that the computed value exceeds the known threshold.</li>
+    <li>The values of danger level greater than 1 are not displayed, but the maximum value and 
+    location is included in the report and may be determined in the View tab. </li>
+    </ul>
+</ul>
+<p>Each of the above quantities may be visualized and queried for min/max/point values using the 
+controls on the <a href="visualization.htm">View tab</a>.</p>
+<div id="footer"> 
+  <p>Copyright 2011, Intact Solutions, LLC.</p> 
+</div> 
+
+</div>
+</body> 
+</html> 

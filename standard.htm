@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<title>Scan&Solve Documentation</title> 
+	<meta name="description" content="Scan&Solve(tm) for Rhino Help"> 
+	<meta name="copyright" content="Copyright (c) 2011 Intact Solutions LLC"> 
+	<meta name="author" content="Intact Solutions"> 
+    <link href="sns_docs.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<div id="wrap">
+<div id="header"><a href="index.htm"><h1>Scan&amp;Solve&#8482; Documentation</h1></a></div><a href="materials.htm"><h1>Materials and Material Editor</h1></a>
+<h2>Standard Materials</h2>
+<p>Scan&amp;Solve&#8482; is delivered with a variety of standard engineering materials.  The standard
+and user-customized materials are accessible through the material selection combo box highlighted
+below:</p>
+<img src="images/material_combo.png" />
+<h2>Failure Criteria</h2>
+<p>Scan&amp;Solve&#8482; supports the following failure criteria:</p>
+<ul>
+    <li><strong>Von Mises</strong> -used for ductile materials.</li>
+    <li><strong>Maximum Shear Stress</strong> -used for ductile materials, it is also known as the 
+    Tresca or Guest criterion and is slightly more conservative than the von Mises criterion.</li>
+    <li><strong>Rankine</strong> -used for brittle materials, it is also known as maximum normal 
+    stress criterion.</li>
+    <li><strong>Coulomb Mohr</strong> -used for brittle materials, more conservative than Rankine 
+    criterion.</li>
+    <li><strong>Modified Mohr</strong> -used for brittle materials, more conservative than 
+    Coulomb Mohr criterion.</li>
+</ul>
+<p>Scan&amp;Solve&#8482; computes the Danger Level in the [View] tab based on the Yield 
+Strength, Tensile Strength, and Compressive Strength specified in the material database.  The von 
+Mises and maximum shear stress failure criteria are only applicable to ductile materials- materials 
+that flex, stretch, or compress significantly before failure.  The Rankine, Coulomb-Mohr, and 
+Modified Mohr failure criteria must be used for brittle materials such as glass, ceramics, and 
+concrete- materials that fail without significant deformation.</p>
+<p>Different failure criteria may be selected when <a href="custom.htm">editing material properties</a>.
+When editing, the von Mises and Maximum Shear Stress criteria require a positive yield strength 
+to be specified.  The Rankine, Coulomb-Mohr, and Modified Mohr criteria require positive tensile strength 
+and compressive strength entries.</p>
+
+<div id="footer">
+<p>Copyright 2011, Intact Solutions, LLC.</p> 
+</div> 
+
+</div>
+</body> 
+</html> 

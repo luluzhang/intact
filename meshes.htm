@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<title>Scan&Solve Documentation</title> 
+	<meta name="description" content="Scan&Solve(tm) for Rhino Help"> 
+	<meta name="copyright" content="Copyright (c) 2011 Intact Solutions LLC"> 
+	<meta name="author" content="Intact Solutions"> 
+    <link href="sns_docs.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<div id="wrap">
+<div id="header"><a href="index.htm"><h1>Scan&amp;Solve&#8482; Documentation</h1></a></div><a href="models.htm"><h1>Supported Rhino Models</h1></a>
+<h2>Analysis on Meshes in Rhino</h2>
+<p>
+If a mesh is good enough, the Rhino command "<strong>MeshToNURB</strong>" may be used to convert the mesh 
+into a valid boundary representation of a solid.  The mesh polygons become legitimate faces of the solid, and 
+Scan&amp;Solve may be used to perform stress analysis as with any other valid boundary representation. 
+However, for this to work, the mesh must satisfy several fairly technical conditions, including:
+</p>
+<ol>
+<li>Every edge in the mesh must be shared by exactly two polygons or triangles.</li>  
+<li>Every vertex has a single "ring" of faces around it.</li>
+<li>Mesh faces cannot intersect each other, except at the edges and vertices.</li>
+<li>Mesh faces (polygons) must be consistently oriented (with normal pointing continuously in the same direction).</li>
+</ol>
+<p>
+These conditions may be verified and corrected using the Mesh Repair and Mesh Edit tools in Rhino. 
+In addition, currently Rhino restricts the MeshToNURB command to meshes with fewer than 20,000 faces.
+</p>
+<p>
+A brief video demonstrating Scan&Solve analysis from meshes may be viewed 
+<a href="http://www.youtube.com/watch?v=lWoYjLYuiM0&feature=mfu_in_order&list=UL">here</a>.
+</p>
+<div id="footer"> 
+<p>Copyright 2011, Intact Solutions, LLC.</p> 
+</div> 
+
+</div>
+</body> 
+</html> 

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<title>Scan&Solve Documentation</title> 
+	<meta name="description" content="Scan&Solve(tm) for Rhino Help"> 
+	<meta name="copyright" content="Copyright (c) 2011 Intact Solutions LLC"> 
+	<meta name="author" content="Intact Solutions"> 
+    <link href="sns_docs.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<div id="wrap">
+<div id="header"><h1>Scan&amp;Solve&#8482; Documentation</h1></div><a href="effective.htm"><h1>Effective Uses of Scan&Solve</h1></a>
+<h2>Resolution and Convergence</h2>
+<ul>
+  <li><em>Resolution</em> is the maximum number of finite elements used to compute an approximate 
+  solution of the stress analysis problem. Only those elements that intersect the solid are included 
+  in the count. Generally speaking, higher resolution increases accuracy of the solution but also 
+  requires more memory and longer computation times. In the context of stress analysis, increased 
+  resolution should make the system more flexible, generally increasing the computed displacements.</li>
+  <li>So why not just always use the maximum resolution? There are at least two important reasons:
+    <ul>
+      <li>You may run out of memory and/or will have to wait for a long time to get your solution, 
+      which will still only be a numerical approximation of an idealized model of physical reality.</li>
+      <li>To see if the solution is converging, you need to compare the solutions at several 
+      different resolutions.</li>
+    </ul>
+  </li>
+  <li><em>Convergence</em> is a key concept in understanding and interpreting the solutions computed 
+  by any numerical approximation software. Numerical simulation approximates an idealized theoretical 
+  model by breaking it, or the space around it, into small pieces called finite elements. In principle, 
+  as elements get smaller and smaller (increasing their number and resolution), the numerical 
+  simulation should get closer and closer to the theoretically exact answer. At some point, the 
+  simulation gets so close to the exact answer that increasing resolution does not visibly improve 
+  the results. In technical jargon, we say that the numerical solution has "converged".  In this 
+  sense, there are no "correct" solutions, but only converged solutions.</li>
+  <li>To establish that the solution converged, solve the same problem a number of times, gradually 
+  increasing the resolution, until displacement values stay approximately in the same range. If 
+  displacement does not converge, there is no guarantee that the numerical solution is accurate.</li>
+  <li>If computed displacement values did converge, one can also study convergence of stresses. But 
+  it is important to remember that the linear theory of elasticity (used by every structural analysis 
+  software, including the present version of Scan&amp;Solve&#8482;) predicts infinite stresses near 
+  "wedges," re-entrant corners, interfaces between different materials, and and other 
+  <em>singularities</em>. In physical reality, this cannot happen, because the material simply 
+  deforms more "plastically" (as opposed to "elastically"). This means that at some points in a 
+  model, stresses may never converge – they will just get bigger and bigger as you increase the 
+  resolution. The more complex your model is, the more likely you will have some singularities like 
+  that. It does make sense to study convergence of stress values at particular locations in the 
+  model that are away from singularities. <br />
+    </li>
+  <li>The solution of the problem may not always converge, even for displacement. There are several 
+  reasons for this. 
+    <ul>
+      <li>There may not be enough resolution, even at the maximum resolution allowed by Scan&amp;Solve&#8482;.  
+      This is particularly common for models with small features and large size to scale ratio. See 
+      section on <a href="known.htm">limitations</a> for more details.</li>
+      <li>The model is physically unstable, and small changes in the geometry, material, or boundary 
+      conditions lead to large changes in displacements and/or stresses. Numerical approximation 
+      may simulate such small changes during the solution process.</li>
+      </ul>
+  </li>
+  <li>Are converged solutions always correct? No. Every numerical procedure has its limitations, 
+  and Scan&amp;Solve&#8482; is no exception. The correctness of computed results depends on specific 
+  elements used in the solution procedure and individual steps in the procedure process, including 
+  function and solid sampling, surface and volume integration, solution of linear system of 
+  equations. To validate the solution procedure, it is highly advisable to test it against a variety 
+  of similar and different problems and on problems with known solutions.</li>
+  </ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+<div id="footer"> 
+<p>Copyright 2011, Intact Solutions, LLC.</p> 
+</div> 
+
+</div>
+</body> 
+</html> 

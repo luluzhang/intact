@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<title>Scan&Solve Documentation</title> 
+	<meta name="description" content="Scan&Solve(tm) for Rhino Help"> 
+	<meta name="copyright" content="Copyright (c) 2011 Intact Solutions LLC"> 
+	<meta name="author" content="Intact Solutions"> 
+    <link href="sns_docs.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<div id="wrap">
+<div id="header"><a href="index.htm"><h1>Scan&amp;Solve&#8482; Documentation</h1></a></div><a href="loads.htm"><h1>Loads</h1></a>
+<h2>Surface Loads</h2>
+<p>Scan&amp;Solve&#8482; currently supports 4 types of surface loads: Vector Force, Scalar Force, 
+Pressure, and Torque. Surface loads are applied to faces selected after clicking the [Add] (load)
+button in the Specify tab.</p>
+<img src="images/boundary_load.png" />
+<p><strong>NOTICE:</strong> Loads are associated with solid faces by the order the faces are 
+represented in Rhino. Consequently, any modifications to the geometry (e.g. Boolean operations) 
+that affect the ordering of the faces may result in loads being moved to new faces or lost 
+altogether.  Check the location of your loads carefully if you modify the geometry between 
+analysis runs.</p>
+
+<h3>Per Face Option</h3>
+<p>The "Per Face" option is available when specifying Vector and Scalar forces. Selecting
+this option means that the force is duplicated on each face in the set of selected faces. 
+Otherwise, the specified force is distributed among the selected faces in proportion to their areas. </p>
+
+<h3>Unit Systems</h3>
+<p>The "Unit Sytem" menu is used to switch between different unit configurations when specifying
+magnitudes. There are several options available for both metric and U.S. units.</p>
+
+<h3>Vector Force</h3>
+<p>A "Vector Force" load is a force load applied to a face in a specified direction. 
+This type of load is analogous to pressing on the top of a book to push it across a table.  The 
+force is specified by entering the components of the force in each coordinate direction.  If 
+multiple faces are selected, check the "Per Face" option to duplicate the force on each face.  
+Vector loads are annotated with red arrows in the direction the force is applied.</p>
+<img src="images/vector_load_dialog.png" /><img src="images/vector_load.png" />
+<p>Another way to specify the vector force is to enter a direction and magnitude. This is done by
+selecting the "Vector force Direction & Magnitude" option. After pressing the "Direction" button,
+draw the tail, then the head of the vector. The magnitude of the vector is then entered in the 
+corresponding text box.</p>
+<img src="images/vector_load_dialog_equiv.png" />
+
+<h3>Scalar Force</h3>
+<p>A "Scalar force" load is a load specified in terms of the total force to be applied 
+over a face.  This type of load is akin to pushing on a facet of a soccer ball; where the amount 
+of force may be known, but the direction might only be described as "inward".  Positive loads push 
+into the surface, negative loads pull on the surface.  If multiple faces are selected, check the 
+"Per Face" option to duplicate the force on each face. Scalar loads are annotated 
+with yellow arrows in the direction of the applied load.</p>
+<img src="images/scalar_load_dialog.png" /><img src="images/scalar_load.png" />
+
+<h3>Pressure</h3>
+<p>A "Pressure" load is a load specified in terms of force per unit area.  Positive 
+pressures push into the surface, negative pressure pull.  Pressure loads are annotated with blue 
+arrows in the direction of the applied pressure.  Examples of pressure loads include wind on the 
+side of a building or the air pressure keeping a soccer ball inflated.</p>
+<img src="images/pressure_load_dialog.png" /><img src="images/pressure_load.png" />
+
+<h3>Torque</h3>
+<p>A "Torque" load is a load that applies a twisting force around an axis.  Torques are specified
+using a 2 step process.  1: The axis (a ray) is chosen by specifying an origin for the axis
+followed by a point on the axis (the ray's direction).  2: The magnitude of torque is specified in 
+the entry box.  The direction of the torque is determined using the right hand rule: 
+using your right hand, point your thumb in the direction of the axis.  A positive torque value 
+applies a torque acting in the direction the fingers of your right hand would wrap around the axis. 
+The torque load is distributed among all the selected faces and varies linearly from zero at the 
+axis.</p>
+<img src="images/torque_load_dialog.png" /><img src="images/torque_load.png" />
+
+
+<div id="footer"> 
+<p>Copyright 2011, Intact Solutions, LLC.</p> 
+</div> 
+
+</div>
+</body> 
+</html> 

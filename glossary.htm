@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<title>Scan&Solve Documentation</title> 
+	<meta name="description" content="Scan&Solve(tm) for Rhino Help"> 
+	<meta name="copyright" content="Copyright (c) 2011 Intact Solutions LLC"> 
+	<meta name="author" content="Intact Solutions"> 
+    <link href="sns_docs.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<div id="wrap">
+<div id="header"><a href="index.htm"><h1>Scan&amp;Solve&#8482; Documentation</h1></a></div>
+<h1>Glossary</h1>
+<p><strong>Body load</strong>: Force acting on every volumetric portion of the body.  Gravitional 
+force (weight) is a common example of a body load. See the section on <a href="body.htm">Body Loads</a> 
+for a description of body loads supported in Scan&amp;Solve&#8482;.</p>
+<p><strong>Brittle</strong> (material): tends to fail under tensile stress without significant 
+deformation.  Brittle materials include pottery, concrete, ceramics, glass, cast iron, and some 
+polymers. Some ductile materials could also become brittle at low temperature.</p>
+<p><strong>Coulomb-Mohr</strong> (failure criterion): used for brittle materials, more conservative 
+than Rankine criterion.</p>
+<p><strong>Danger level</strong>: The danger level, for a specific failure criterion, is a scalar 
+value that ranges between 0 and 1. It is computed at every point as a ratio of the computed value 
+of the selected failure criterion to the threshold value known to cause failure of this particular 
+material.  The value greater than 1, indicates that the computed value exceeds the known threshold.
+</p>
+<p><strong>Deflection</strong>: is a visualization of the computed deformation in the body. It is 
+constructed by magnifying the magnitude of displacement at every point by thousands of times.  It 
+should not be confused with the actual physical deformation of the body.</p>
+<strong>Deformation</strong>: A body deforms because different points of the body have different 
+displacements. If all displacements were the same, the body would move rather than deform.  The rate 
+of deformation at a point is measured by strain.
+<p><strong>Displacement</strong>: is a vector (x-, y-, z-) quantity measuring where each point of 
+the body moves after the loads are applied.  Total displacement is a (scalar) 
+magnitude of the displacement vector. Displacement is measured in units of length.</p>
+<p><strong>Ductile</strong> (material): exhibits the ability to deform (stretch) under tensile 
+stress without fracture. Ductile materials include gold, copper, steel, aluminum, rubber, and other 
+stretchable materials.</p>
+<p><strong>Failure criterion</strong>: is an estimation of the failure of a component or a 
+structural member based on the stress state.  Components constructed from ductile materials are 
+assumed to fail when they undergo plastic deformation.  The von Mises criterion is commonly used
+to estimate this type of failure.  Failure in brittle materials is sudden, with little or no plastic 
+deformation.  The maximum normal stress criterion or Mohr's theory are used to predict brittle
+failure.</p>
+<p><strong>Homogeneous</strong> (material): the same at every point of a body.</p>
+<p><strong>Isotropic</strong> (material): the same in all directions.</p>
+<p><strong>Linear </strong>(model)<strong></strong>: the output (response, e.g. deformations) of a 
+system increases or decreases in direct proportion to the input (e.g. loads). If the input is 
+doubled in size, the output is doubled too.</p>
+<p><strong>Modified Mohr</strong> (failure criterion): used for brittle materials, more conservative 
+than Coulomb Mohr criterion.</p>
+<p><strong>Normal</strong> <strong>stress</strong> <strong>(strain)</strong>: component of stress 
+(strain) measured in the direction normal to a specified plane or surface.</p>
+<p><strong>Principal stress (strain)</strong>: at any location in a body, it is possible to orient 
+the coordinate system in such a way that shear stresses (strains) vanish in all directions and only 
+normal stresses acting in the three orthogonal coordinate axes directions remain.  These three 
+components of stress are called <em>principal</em> stresses (strains). The value and the direction 
+of the principal stresses (strains) changes at every point.</p>
+<p><strong>Rankine</strong> (failure criterion): used for brittle materials, it is also known as 
+maximum normal stress criterion because it predicts failure of brittle materials based on the maximum 
+value of principal stress.</p>
+<p><strong>Resolution</strong>: maximum number of finite elements used to compute an approximate 
+solution of the stress analysis problem.  Only those elements that intersect the solid are included 
+in the count. Higher resolution requires more memory and longer computation times. 
+</p>
+<p><strong>Restraint</strong>: geometric condition or constraint applied to the boundary of a solid. 
+Restraints specify that selected boundaries cannot move when external loads are applied. Individual 
+restraints may be complete (in all directions) or partial (in some directions), but combined 
+restraints must prevent body from moving in order to solve the structural analysis problem. See the 
+section on Restraints for restraints supported in  Scan&amp;Solve&#8482;.</p>
+<p> <strong>Shear</strong> <strong>stress (strain)</strong>: component of stress (strain) measured 
+tangentially to the indicated direction. </p>
+<p><strong>Solid (in Rhino)</strong>: a closed solid poly-surface in Rhino's jargon. More precisely, 
+a solid is bounded by a collection of NURBs surfaces that intersect only on their bounding edges, 
+and every edge is shared by exactly two surfaces. </p>
+<p><strong>Static</strong>: dynamic (time-varying) effects are ignored.  Static forces are applied 
+very slowly and do not change once they reach their full magnitude.</p>
+<p><strong>Surface load</strong>: Force applied to applied to a boundary of the solid.  See the 
+section on <a href="surface.htm">Surface Loads</a> for a description of surface loads supported in 
+Scan&amp;Solve&#8482;.</p>
+<p><strong>Strain</strong>: informally, strain measures (directional) rate of deformation within 
+the body. It is dimensionless because it measures change of length per unit length. Just like stress, 
+one-dimesional strain can be measured in any direction, and there is one-to-one correspondence 
+between components of stress and strain (normal, shear, principal, etc.)</p>
+<p><strong>Stress</strong>: describes <em>all</em> forces acting at a point in a body.  Different 
+forces act in different directions. For any selected direction, stress in that direction is measured 
+as a force acting across an imaginary plane perpendicular to the selected direction. The force 
+component normal to the plane is called <em>normal</em> stress; the force component tangential to 
+the plane is called <em>shear</em> stress.  This process may be repeated for every direction, but 
+it is enough to represent tangential and normal stresses for the 3 coordinate planes. These six 
+components of stress are measured in units of Force/Area.</p>
+<p><strong>Torque</strong>: Also called moment of force,  measures the rotational effect of force 
+applied about some axis a distance away. It is measured in units of Force x Length.</p>
+<p><strong>Von Mises </strong>(failure criterion): The von Mises criterion (also called Von Mises 
+stress) is a scalar quantity calculated from stress components that measures distortion energy and 
+is used to predict failure of ductile materials.<br />
+</p>
+<div id="footer"> 
+  <p>Copyright 2011, Intact Solutions, LLC.</p> 
+</div> 
+
+</div>
+</body> 
+</html> 

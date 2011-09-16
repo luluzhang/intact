@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<title>Scan&Solve Documentation</title> 
+	<meta name="description" content="Scan&Solve(tm) for Rhino Help"> 
+	<meta name="copyright" content="Copyright (c) 2011 Intact Solutions LLC"> 
+	<meta name="author" content="Intact Solutions"> 
+    <link href="sns_docs.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<div id="wrap">
+<div id="header"><a href="index.htm"><h1>Scan&amp;Solve&#8482; Documentation</h1></a></div><a href="linear.htm">
+<h1>Linear Static Analysis</h1></a>
+<h2>Known Limitations &amp; Common Problems</h2>
+<p>Scan&amp;Solve computes a <a href="mathematical.htm">numerical approximation</a> of a mathematical 
+model of <a href="mathematical.htm">linear elasticity</a>. As is the case with all such software, 
+the computed stresses and displacements should not be confused with <a href="physical.htm">physical 
+reality</a> and should not used for critical design decisions in place of physical experients. A 
+number of factors, briefly described below, can cause Scan&amp;Solve answers to deviate 
+significantly from physical reality:</p>
+<ul>
+  <li><strong>Model is not linear elastic.</strong>
+  A linear elastic model of stress is not applicable in many situations, e.g. non-linear material 
+  properties, large plastic deformations, vibrations, buckling, thermal stresses, and so on.</li>
+  <li><strong>Idealized geometry and material properties.</strong>
+  While geometric inaccuracies may be quantified by design and manufacturing tolerances, predicting 
+  the effect of material variability is usually more difficult.</li>
+  <li><strong>Imprecise or unrealistic boundary conditions.</strong>
+  The correctness of the model depends critically on the type (are they really static?) and 
+  accuracy of restraints and loads.  But these parameters are rarely known precisely, contributing 
+  to uncertainty of the computed results.</li>
+  <li><strong>Low resolution.</strong>
+  Every known stress analysis approach (including Scan&amp;Solve) relies on spatial discretization 
+  of the geometry in one way or another.  Scan&amp;Solve is unique because it uses volumetric 
+  discretization of space that does not conform to geometry, and the user does not need to deal 
+  with meshing, but fundamentally, it still relies on the notion of a "finite element" which is 
+  associated with some volumetric portion of geometry.  It is usually impossible to estimate a 
+  priori how many elements are sufficient for accurate answers. Scan&amp;Solve currently does not 
+  perform any posteriori analysis of the computed solutions for accuracy or convergence.</li>
+  <li><strong>Missed small features.</strong>
+  Scan&amp;Solve tolerates small imperfections and features in the noisy or overly detailed 
+  boundary representation of a solid.  However, this means that at low resolution, it could also 
+  miss some important features, such as small holes, gaps, and channels that could affect accuracy 
+  or correctness of computed solutions.</li>
+  <li><strong>Large size to scale ratio.</strong>
+  The size to scale ratio is a fundamental barrier of all numerical  methods, and not a limitation 
+  unique to Scan&amp;Solve. Challenging models include thin-walled solids, slender truss-like 
+  structures, solids restrained on very small faces, and other models where the ratio of the 
+  overall size of the solid to the smallest dimension ('scale') on the object is very large.  
+  Accurate analysis requires that the size of finite element should be small enough to resolve the 
+  smallest scale of the mode.  But if the model is also very large, this will result in a huge number 
+  of elements, easily exceeding the maximum resolution available in Scan&amp;Solve.</li>
+  <li><strong>No adaptive analysis.</strong>
+  Some of the above problem may be alleviated by varying the size of the elements throughout the 
+  space, depending on the size of small features and/or desired resolution.  The current version of 
+  Scan&amp;Solve does not support such adaptive analysis.</li>
+  <li><strong>No edge or point restraints.</strong>
+  Only surface areas can be restrained in the current version of Scan&amp;Solve, as dictated by the 
+  theory. Point and edge restraints are commonly used in mesh-based FEA packages where they are 
+  applied to nodes. But such restraints are actually not physical and may result in poor solutions 
+  in vicinity of the restraints.  Scan&amp;Solve may nevertheless offer such restraints in the 
+  future in order to support modeling needs of advanced users, with appropriate warning about their 
+  utility.</li>
+  <li><strong>First degree numerical approximation.</strong>
+  The current version of Scan&amp;Solve relies on first degree (linear) polynomial functions 
+  (splines) to approximate the solution. Some structural analysis problems require higher-degree 
+  functions to achieve accuracy and convergence. We expect future versions of Scan&amp;Solve to 
+  support such functions.</li>
+</ul>
+<p><br />
+</p>
+<div id="footer"> 
+  <p>Copyright 2011, Intact Solutions, LLC.</p> 
+</div> 
+
+</div>
+</body> 
+</html> 

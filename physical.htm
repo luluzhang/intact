@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<title>Scan&Solve Documentation</title> 
+	<meta name="description" content="Scan&Solve(tm) for Rhino Help"> 
+	<meta name="copyright" content="Copyright (c) 2011 Intact Solutions LLC"> 
+	<meta name="author" content="Intact Solutions"> 
+    <link href="sns_docs.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<div id="wrap">
+<div id="header"><a href="index.htm"><h1>Scan&amp;Solve&#8482; Documentation</h1></a></div><a href="linear.htm">
+<h1>Linear Static Analysis</h1></a>
+<h2>Physical Reality</h2>
+<p>It is important to remember that Scan&amp;Solve&#8482; computes a numerical approximation of an 
+idealized theoretical model, not physical reality.  Every model has its limitations. For example, 
+the linear theory of elasticity predicts infinite stresses near "wedges", re-entrant corners, 
+interfaces between different materials, and so on.  In physical reality, this cannot happen, because 
+the material simply deforms more "plastically" (as opposed to "elastically").  But in the computer 
+simulation, this means that at some points in your model, stresses will never converge – they will 
+just get bigger and bigger as you increase the resolution.  The more complex your model is, the more 
+likely you will have some points like that.</p>
+<p>More generally, the linear static model of elasticity (and hence Scan&amp;Solve&#8482;) does not 
+account for many important physical phenomena, including vibration, buckling, material and geometry 
+non-linearities, large and plastic deformations, and so on.</p>
+<div id="footer"> 
+<p>Copyright 2011, Intact Solutions, LLC.</p> 
+</div> 
+
+</div>
+</body> 
+</html> 

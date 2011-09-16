@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<title>Scan&Solve Documentation</title> 
+	<meta name="description" content="Scan&Solve(tm) for Rhino Help"> 
+	<meta name="copyright" content="Copyright (c) 2011 Intact Solutions LLC"> 
+	<meta name="author" content="Intact Solutions"> 
+    <link href="sns_docs.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<div id="wrap">
+<div id="header"><a href="index.htm"><h1>Scan&amp;Solve&#8482; Documentation</h1></a></div><a href="loads.htm"><h1>Loads</h1></a>
+<h2>Body Loads</h2>
+<p>Body loads comprise forces that are distributed over a solid volume.  Probably the most familiar 
+of these is the gravitational force acting on a mass to give it weight.  Simple gravitational loads
+are applied in the Specify tab using the Gravity checkbox.  Rotational body loads and general
+linear acceleration loads are applied by choosing <strong>[Add]</strong> in the <strong>Loads</strong> group.
+Followed by the <strong><u>B</u>ody</strong> option at the command line.</p>
+<a name="gravity_load"><h3>Gravitational Loads</h3></a>
+<p>Gravitational loads are the simplest to apply.  Simply check the <strong>[&nbsp;] Gravity</strong> checkbox to apply a
+gravitational load and simulate the model under its own weight.  Gravitational loads applied in this manner
+act in the -Z direction with a magnitude corresponding to Earth's surface gravitation.  More complex gravitation
+scenarios may be simulated using <a href="#linear_acceleration_load">linear acceleration loads</a>.  If the
+<strong>Gravity</strong> box is checked, the gravitational load is <strong>added</strong> to any other loads being applied.</p>
+<img src="images/gravity_check.png" />
+
+<a name="rotational_body_load"><h3>Rotational Body Loads</h3></a>
+<p>Rotational body loads are applied by choosing <strong>[Add]</strong> in the <strong>Loads</strong>
+group of the <strong>Specify</strong> tab.  Choose the the <strong><u>B</u>ody</strong> option at 
+the command line to bring up the <strong>Body Load Creator</strong> dialog.</p>
+<img src="images/rotational_input.png" />
+<p>A rotational body load consists of 2 components: angular velocity and angular acceleration; specified 
+using the following steps:</p>
+<ol>
+    <li>Enable rotational body loads by checking the <strong>[&nbsp] Active</strong> checkbox in the <strong>Rotational Load</strong> group.</li>
+    <li>Click <strong>[Axis]</strong> and choose an axis (a ray) of rotation by specifying an origin for the axis followed by a point on the axis (the ray's direction).</li>
+    <li>Specify the angular velocity and angular acceleration in the entry boxes.</li>
+    <li>Click <strong>[OK]</strong> to dismiss the dialog and apply the load to the model.</li>
+</ol> 
+<p>The direction of the rotation is determined using the right hand rule: using your right hand, point 
+your thumb in the direction of the axis.  A positive angular acceleration would simulate moving the 
+restraints in the direction the fingers of your right hand would wrap around the axis.  The body 
+will tend to deflect in the opposite direction. The radial deflection due to angular velocity is 
+independent of rotational direction.</p>
+<p>The rotational body load is <strong>added</strong> to the body loads due to gravity and linear acceleration.</p>
+
+<a name="linear_acceleration_load"><h3>Linear Acceleration Body Loads</h3></a>
+<p>Linear acceleration loads are applied by choosing <strong>[Add]</strong> in the <strong>Loads</strong>
+group of the <strong>Specify</strong> tab.  Choose the the <strong><u>B</u>ody</strong> option at 
+the command line to bring up the <strong>Body Load Creator</strong> dialog.</p>
+<img src="images/linear_accel_input.png" />
+<p>Linear acceleration vector loads are specified by entering the components of a linear
+acceleration vector in fractions of Earth's <strong>g</strong>.  It is <strong>added</strong> to 
+the body loads due to gravity and rotation.</p>
+<ol>
+    <li>Enable linear acceleration vector body loads by checking the <strong>[&nbsp] Active</strong> checkbox in the <strong>Linear Acceleration Vector</strong> group.</li>
+    <li>Specify the x, y, z components in the entry box in the form <strong>A<sub>x</sub>,A<sub>y</sub>,A<sub>z</sub></strong>.</li>
+    <li>Click <strong>[OK]</strong> to dismiss the dialog and apply the load to the model.</li>
+</ol> 
+<p>The body's response to the linear acceleration is simulated as if the restraints are accelerated
+in the specified direction.  The distributed mass of the body will tend to deflect in the opposite
+direction.</p>
+
+<div id="footer"> 
+<p>Copyright 2011, Intact Solutions, LLC.</p> 
+</div> 
+
+</div>
+</body> 
+</html> 
